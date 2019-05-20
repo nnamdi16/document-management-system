@@ -29,7 +29,7 @@ describe('signUpAction', () => {
 		const expectedActions = [
 			{
 				type: AUTH_USER,
-				payload: authResponse.data.token
+				payload: authResponse.token
 			}
 		];
 		const store = mockStore({});
