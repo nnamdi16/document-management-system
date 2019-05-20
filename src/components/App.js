@@ -1,11 +1,17 @@
+/* eslint-disable no-undef */
 import React from 'react';
 import 'components/App.css';
-import LandingPage from 'components/landingPage/LandingPage';
+import Header from 'components/Header/Header';
+// import LandingPage from 'components/landingPage/LandingPage';
 
-function App() {
+function App({ children }) {
+	console.log(children);
 	return (
     <div>
-        <LandingPage />
+        <Header />
+        <br />
+        {children}
+        {/* <LandingPage /> */}
     </div>
 	);
 }

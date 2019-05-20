@@ -10,7 +10,7 @@ class LandingPage extends Component {
 	render() {
 		return (
     <div>
-        <div className="row">
+        <div className="landing row">
             <div className="col s12 layout">
                 <div className="col s12 m6 l6">
                     <BackgroundEllipse src={ ellipse } alt="Background Ellipse" />
