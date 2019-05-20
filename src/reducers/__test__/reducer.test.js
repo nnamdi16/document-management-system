@@ -17,11 +17,11 @@ describe('should return the initial state', () => {
 				{},
 				{
 					type: types.AUTH_USER,
-					payload: mockData.authResponse.data.token
+					payload: mockData.authResponse.token
 				}
 			)
 		).toEqual({
-			authenticated: mockData.authResponse.data.token
+			authenticated: mockData.authResponse.token
 		});
 	});
 
