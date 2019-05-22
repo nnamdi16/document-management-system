@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, withRouter } from 'react-router-dom';
 import Root from './Root';
 // import * as serviceWorker from './serviceWorker';
 import 'materialize-css/dist/css/materialize.min.css';
@@ -13,17 +13,17 @@ import DashBoard from 'components/DashBoard';
 import SignUp from 'components/auth/SignUp';
 
 ReactDOM.render(
-    <Root>
-        <App>
-            <BrowserRouter>
-                <div>
-                    <Route path="/" exact component={ LandingPage } />
-                    <Route path="/signup" exact component={ SignUp } />
-                    <Route path="/dashboard" exact component={ DashBoard } />
-                </div>
-            </BrowserRouter>
-        </App>
-    </Root>,
+  <Root>
+    <BrowserRouter>
+      <App>
+        <div>
+          <Route exact path="/" component={ withRouter(LandingPage) } />
+          <Route exact path="/signup" component={ withRouter(SignUp) } />
+          <Route exact path="/dashboard" component={ withRouter(DashBoard) } />
+        </div>
+      </App>
+    </BrowserRouter>
+  </Root>,
 	document.getElementById('root')
 );
 
