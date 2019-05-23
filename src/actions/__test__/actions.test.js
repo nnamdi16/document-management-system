@@ -5,8 +5,9 @@ import thunk from 'redux-thunk';
 import moxios from 'moxios';
 import mockData from '__mocks__/mockData';
 import mockLocalStorage from '__mocks__/mockLocalStorage';
-import { signUp } from 'actions/index';
+import { signUp, signIn } from 'actions/index';
 import { AUTH_USER, AUTH_ERROR } from 'actions/types';
+import auth from 'reducers/auth';
 
 //jest.mock('localStorage');
 
@@ -55,6 +56,53 @@ describe('signUpAction', () => {
 		const store = mockStore({});
 		await store.dispatch(signUp(signUpData, () => {})).then(() => {
 			expect(store.getActions()).toEqual(expectedActions);
+		});
+		done();
+	});
+});
+
+describe('signInAction', () => {
+	beforeEach(() => moxios.install());
+	afterEach(() => {
+		moxios.uninstall();
+	});
+
+	it('AUTH_USER is logged in when signIn action is successful', async done => {
+		const { authResponse, signInData } = mockData;
+		moxios.stubRequest('http://206.189.44.170/api/users/login', {
+			status: 201,
+			response: authResponse
+		});
+
+		const expectedAction = [
+			{
+				type: AUTH_USER,
+				payload: authResponse.token
+			}
+		];
+		const store = mockStore({});
+		await store.dispatch(signIn(signInData, () => {})).then(() => {
+			expect(store.getActions()).toEqual(expectedAction);
+		});
+		done();
+	});
+
+	it('AUTH_USER is not logged in when sigIn action is not successful', async done => {
+		const { authResponse, signInData } = mockData;
+		moxios.stubRequest('http://206.189.44.170/api/users/login', {
+			status: 400,
+			response: authResponse
+		});
+
+		const expectedAction = [
+			{
+				type: AUTH_ERROR,
+				payload: 'Invalid Login'
+			}
+		];
+		const store = mockStore({});
+		await store.dispatch(signIn(signInData, () => {})).then(() => {
+			expect(store.getActions()).toEqual(expectedAction);
 		});
 		done();
 	});
