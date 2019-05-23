@@ -15,9 +15,9 @@ it('calls onSubmit prop function when form is submitted', () => {
 	const onSubmit = jest.fn();
 
 	const wrapper = mount(
-    <Root>
-        <SignUp handleSubmit={ onSubmit } />
-    </Root>
+  <Root>
+    <SignUp handleSubmit={ onSubmit } />
+  </Root>
 	);
 
 	const form = wrapper.find('form');
@@ -41,9 +41,9 @@ describe('Simulate the submit event', () => {
 
 	it('can post user data to the database and sign up a user', done => {
 		const wrapped = mount(
-    <Root>
-        <SignUp />
-    </Root>
+  <Root>
+    <SignUp />
+  </Root>
 		);
 		//console.log(wrapped);
 		const container = wrapped
