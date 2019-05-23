@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 class Header extends Component {
 	renderLinks() {
-		if (!this.props.authenticated) {
+		if (this.props.authenticated) {
 			return (
   <div>
     <ul id="nav-mobile" className="right hide-on-med-and-down">
