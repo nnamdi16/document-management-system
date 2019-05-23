@@ -12,6 +12,10 @@ const mockData = {
 		fullName: 'John James',
 		email: 'john@gmail.com',
 		password: '123456'
+	},
+	signInData: {
+		username: 'james',
+		password: '123456'
 	}
 };
 
