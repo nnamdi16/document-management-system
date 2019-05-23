@@ -11,6 +11,7 @@ import App from 'components/App';
 import LandingPage from 'components/landingPage/LandingPage';
 import DashBoard from 'components/DashBoard';
 import SignUp from 'components/auth/SignUp';
+import SignIn from 'components/auth/Signin';
 
 ReactDOM.render(
   <Root>
@@ -20,6 +21,7 @@ ReactDOM.render(
           <Route exact path="/" component={ withRouter(LandingPage) } />
           <Route exact path="/signup" component={ withRouter(SignUp) } />
           <Route exact path="/dashboard" component={ withRouter(DashBoard) } />
+          <Route exact path="/signin" component={ withRouter(SignIn) } />
         </div>
       </App>
     </BrowserRouter>
