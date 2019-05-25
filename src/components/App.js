@@ -7,12 +7,12 @@ import Header from 'components/Header/Header';
 function App({ children }) {
 	console.log(children);
 	return (
-    <div>
-        <Header />
-        <br />
-        {children}
-        {/* <LandingPage /> */}
-    </div>
+  <div>
+    <Header />
+    <br />
+    {children}
+    {/* <LandingPage /> */}
+  </div>
 	);
 }
 

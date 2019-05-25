@@ -18,3 +18,25 @@ export const signUp = (formProps, callback) => async dispatch => {
 		});
 	}
 };
+
+export const signIn = (formProps, callback) => async dispatch => {
+	try {
+		const response = await axios.post('http://206.189.44.170/api/users/login', formProps);
+		console.log(response);
+		dispatch({ type: AUTH_USER, payload: response.data.token });
+		callback();
+	} catch (e) {
+		dispatch({
+			type: AUTH_ERROR,
+			payload: 'Invalid Login'
+		});
+	}
+};
+
+export const signout = () => async dispatch => {
+	localStorage.removeItem('token');
+	return {
+		type: AUTH_USER,
+		payload: ''
+	};
+};

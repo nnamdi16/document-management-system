@@ -9,38 +9,38 @@ import 'components/App.css';
 class LandingPage extends Component {
 	render() {
 		return (
-    <div>
-        <div className="landing row">
-            <div className="col s12 layout">
-                <div className="col s12 m6 l6">
-                    <BackgroundEllipse src={ ellipse } alt="Background Ellipse" />
-                </div>
-                <div className="col s12 m6 l6 ">
-                    <Button variant="outlined" color="primary">
+  <div>
+    <div className="landing row">
+      <div className="col s12 layout">
+        <div className="col s12 m6 l6">
+          <BackgroundEllipse src={ ellipse } alt="Background Ellipse" />
+        </div>
+        <div className="col s12 m6 l6 ">
+          <Button variant="outlined" color="primary">
 								Primary
-                    </Button>
-                    <button className="btn waves-effect waves-light #3f51b5 indigo right" type="submit" name="action">
+          </Button>
+          <button className="btn waves-effect waves-light #3f51b5 indigo right" type="submit" name="action">
 								Get Started for Free
-                    </button>
+          </button>
 
-                    {/* <button
+          {/* <button
 								className="btn waves-effect waves-light #3f51b5 indigo right indigo-text "
 								type="submit"
 								name="action"
 							>
 								Login in
                     </button> */}
-                </div>
-            </div>
-
-            <div className="col s12 m6 l6">
-                <BackgroundEclipse src={ eclipseSVG } alt="Background Eclipse" />
-            </div>
-            <div className="col s12 m6 l6">
-                <BackgroundImage src={ backgroundSVG } alt="Landing page" />
-            </div>
         </div>
+      </div>
+
+      <div className="col s12 m6 l6">
+        <BackgroundEclipse src={ eclipseSVG } alt="Background Eclipse" />
+      </div>
+      <div className="col s12 m6 l6">
+        <BackgroundImage src={ backgroundSVG } alt="Landing page" />
+      </div>
     </div>
+  </div>
 		);
 	}
 }
