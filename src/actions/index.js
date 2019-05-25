@@ -32,3 +32,11 @@ export const signIn = (formProps, callback) => async dispatch => {
 		});
 	}
 };
+
+export const signout = () => async dispatch => {
+	localStorage.removeItem('token');
+	return {
+		type: AUTH_USER,
+		payload: ''
+	};
+};
