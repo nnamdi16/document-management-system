@@ -5,6 +5,7 @@ import backgroundSVG from 'img/bg-picture.svg';
 import eclipseSVG from 'img/bg-eclipse.svg';
 import ellipse from 'img/ellipse.svg';
 import 'components/App.css';
+import { Link } from 'react-router-dom';
 
 class LandingPage extends Component {
 	render() {
@@ -15,23 +16,19 @@ class LandingPage extends Component {
         <div className="col s12 m6 l6">
           <BackgroundEllipse src={ ellipse } alt="Background Ellipse" />
         </div>
-        <div className="col s12 m6 l6 ">
-          <Button variant="outlined" color="primary">
-								Primary
-          </Button>
-          <button className="btn waves-effect waves-light #3f51b5 indigo right" type="submit" name="action">
-								Get Started for Free
-          </button>
-
-          {/* <button
-								className="btn waves-effect waves-light #3f51b5 indigo right indigo-text "
-								type="submit"
-								name="action"
-							>
-								Login in
-                    </button> */}
-        </div>
+        <Access className="row">
+          <Link to={ '/signup' }>
+            <button className="btn waves-effect waves-light #3f51b5 indigo right" type="submit" name="action">
+									Get Started for Free
+            </button>
+          </Link>
+        </Access>
       </div>
+      <Caption className="row">
+        <div className="col l6 m6 s12">
+          <h4>Easily manage digital content, simplify your workload and yield high efficiency</h4>
+        </div>
+      </Caption>
 
       <div className="col s12 m6 l6">
         <BackgroundEclipse src={ eclipseSVG } alt="Background Eclipse" />
@@ -67,4 +64,17 @@ const BackgroundEllipse = styled.img`
 	left: -3rem;
 	top: -1rem;
 	position: relative;
+`;
+const Caption = styled.div`
+	color: #3f51b5;
+	text-transform: uppercase;
+	position: absolute;
+	top: 22rem;
+	left: 12rem;
+`;
+
+const Access = styled.div`
+	position: absolute;
+	top: 32rem;
+	left: 14rem;
 `;
